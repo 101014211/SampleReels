@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>无缝滚动</title>
+	<style>
+		*{padding:0;margin:0;}
+		#title{width:1240px;margin:200px auto 30px;text-align:center;font-size:48px;}
+		#mainbox{margin:20px auto;}
+		#div1 {width:1120px;height:210px;position:relative;background:red;overflow:hidden;float:left;}
+		#div1 ul{position:absolute;left:0;top:0;}
+		#div1 ul li{width:280px;height:210px;list-style:none;float:left;}
+		
+		a:hover{cursor:pointer;}
+		#leftimg:hover{cursor:pointer;}
+		#rightimg:hover{cursor:pointer;}
+	</style>
+	<script>
+	window.onload=function()
+	{
+		var oDiv=document.getElementById("div1");
+		var oUl = oDiv.getElementsByTagName("ul")[0];
+		var aLi=oUl.getElementsByTagName("li");
+		oUl.innerHTML+=oUl.innerHTML;
+		oUl.style.width=aLi[0].offsetWidth*aLi.length+"px";
+		var leftbutton=document.getElementById("leftimg");
+		var rightbutton=document.getElementById("rightimg");
+		var mainb=document.getElementById("mainbox");
+		var speed = -2;
+		function move()
+		{	
+			if(oUl.offsetLeft<-oUl.offsetWidth/2)
+				{
+					oUl.style.left="0";
+				}
+			if(oUl.offsetLeft>0)
+				{
+					oUl.style.left=-oUl.offsetWidth/2+"px";
+				}
+			oUl.style.left=oUl.offsetLeft+speed+"px";
+		}	
+		var timer=setInterval(move,30);
+		mainb.onmouseover=function(){clearInterval(timer);leftbutton.style.display="block";rightbutton.style.display="block";};
+		mainb.onmouseout=function(){timer=setInterval(move,30);leftbutton.style.display="none";rightbutton.style.display="none";};
+		
+		leftbutton.onclick=function()
+		{
+			speed=-2;
+		}
+		rightbutton.onclick=function()
+		{
+			speed=2;
+		}	
+	};
+	</script>
+ </head>
+ <body>
+	<div id="title">左右方向无缝滚动</div>
+	<div id="mainbox" style="width:1240px;height:210px">
+		<div id="left" style="width:60px;height:210px;float:left;">
+			<img style="display:none;" id="leftimg" src="img/left.jpg">
+		</div>
+		<div id="div1">
+			<ul>
+				<li><img src="img/0.gif"/></li>
+				<li><img src="img/1.gif"/></li>
+				<li><img src="img/2.gif"/></li>
+				<li><img src="img/3.gif"/></li>
+				<li><img src="img/4.gif"/></li>
+				<li><img src="img/5.gif"/></li>
+				<li><img src="img/6.gif"/></li>
+				<li><img src="img/7.gif"/></li>
+			</ul>
+		</div>
+		<div id="right" style="width:6opx;height:210px;float:left;">
+			<img style="display:none;" id="rightimg" src="img/right.jpg">
+		</div>
+	</div>
+ </body>
+</html>

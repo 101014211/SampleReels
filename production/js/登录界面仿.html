@@ -1,0 +1,92 @@
+﻿<!doctype html>
+<html>
+ <head>
+	<!--申明当前页面的编码集（中文编码gb2312，国际编码UTF-8）-->
+	<meta http-equiv="Content-Type" content="text/html";charset="utf-8">
+	<!--申明当前页面的三要素-->
+	<title>HTML模板</title>
+	<meta name="KeyWords" content="关键词,关键词">
+	<meta name="Description" content="">
+	<style>
+	*{margin:0;padding:0;}
+	body{background:url(img/bg.gif);}
+	#form{width:300px;height:120px;position:absolute;background:url(img/lo.jpg);text-align:center;padding-top:20px;border-radius:15px;display:none;}
+	#join{float:right;margin:10px;display:block;}
+	#reg{float:right;margin:10px;display:block;}
+	#sure{float:left;margin-left:92px;width:50px;}
+	#can{float:left;margin-left:73px;width:50px;}
+	</style>
+	<script>
+	window.onload=function()
+	{
+		var oJoin=document.getElementById("join");
+		var oReg=document.getElementById("reg");
+		
+		var oForm = document.getElementById("form");
+		var oCan=document.getElementById("can");
+		oJoin.onclick=function(ev)
+		{
+			oForm.style.display="block";
+			var oEve=ev||event;
+			oForm.style.left=(document.documentElement.clientWidth-oForm.offsetWidth)/2+"px";
+			oForm.style.top=(document.documentElement.clientHeight-oForm.offsetHeight)/2+"px";
+		};
+		
+		oCan.onclick=function()
+		{
+			oForm.style.display="none";
+		};
+		
+		oForm.onmouseover=function()
+		{
+			oForm.style.cursor="pointer";
+			oForm.onmousedown=function(ev)
+			{
+				var oEve=ev||event;
+				var locx=oEve.clientX-oForm.offsetLeft;
+				var locy=oEve.clientY-oForm.offsetTop;
+				
+				document.onmousemove=function(ev)
+				{
+					var oEve=ev||event;
+					var l=oEve.clientX-locx;
+					var r=oEve.clientY-locy;
+					if(l<0)
+						l=0;
+					if(r<0)
+						r=0;
+					oForm.style.left=l+"px";
+					oForm.style.top=r+"px";
+					
+					if(oForm.offsetLeft>document.documentElement.clientWidth-oForm.offsetWidth)
+						oForm.style.left=document.documentElement.clientWidth-oForm.offsetWidth+"px";
+					else
+						oForm.style.left=l+"px";
+					
+					if(oForm.offsetTop>document.documentElement.clientHeight-oForm.offsetHeight)
+						oForm.style.top=document.documentElement.clientHeight-oForm.offsetHeight+"px";
+					else
+						oForm.style.top=r+"px";
+				};
+			
+				document.onmouseup=function()
+				{
+					document.onmousemove="null";
+					document.onmousedown="null";
+				};
+			};
+		};
+	};
+	</script>
+	</head>
+ <body>
+ <button id="join">登录</button>
+ <button id="reg">注册</button>
+  <form  id="form" action="标签/tag.html" >
+		用户名:<input type="text"/><br/><br/>
+		密&nbsp码:<input type="password" /><br/><br/>
+		<input id="sure" type="submit" value="确认"/>
+		<input id="can" type="reset" value="取消"/>
+  </form>
+ </body>
+</html>

@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>落网-独立音乐推荐</title>
+  <style type="text/css">/*CSS样式表*/
+	*{margin:0px;padding:0px;}
+	body{
+		font-size:14px;
+		font-family:"微软雅黑";
+		}
+	.box{
+		background:#F2F2F2;
+		height:50px;
+		border-top:2px solid red;
+	}
+	.nav{
+		width:960px;
+		margin:0 auto;
+		}
+	.left{
+		width:560px;
+		float:left;
+		}
+	.right{
+		width:400px;
+		float:left;
+		}
+	li{	
+		list-style:none;
+		text-align:right;
+		line-height:50px;
+		}
+	.table1 li{
+		float:left;	
+		margin-left:25px;
+		}
+	.left img{float:left;}
+	.table2 li{
+		float:right;
+	}
+	.bannerbox .imgbox{
+		width:960px;
+		height:211px;
+		margin:0 auto;
+		text-align:center;
+		line-height:100px;
+	}
+	.imgbox img{width:960px;height:211px;}
+	.blank1{height:30px;}
+	.blank2{height:80px;width:960px;margin:0 auto;}
+	.leftlist{
+		width:20%;
+		float:left;
+		}
+	.leftlist span{
+		border-left:4px solid red;
+		line-height:80px;
+		font-size:24px;}
+	.rightlist li{
+		float:right;
+		margin:3px;
+		color:#7d7d7d;
+		line-height:70px;
+		
+		}
+	.rightlist li a{text-decoration:none;}
+	.content{
+		width:960px;
+		height:546px;
+		margin:0 auto;
+		}
+	.bigimg{
+		width:640px;
+		height:476px;
+		float:left;
+		}
+	.bigimg{
+		width:640px;
+		height:476px;
+		}
+	.topimg{
+		width:303px;
+		height:234px;
+		float:right;
+		}
+	.topimg img{width:303px;height:212px;}
+	.bottomimg{
+		width:303px;
+		height:212px;float:right;margin-top:10px;
+		}
+	.bottomimg img{width:302px;height:210px;}
+	
+	.block{width:960px;
+		height:330px;
+		margin:0 auto;
+		
+	}
+	.bmiddle{width:465px;height:150px;margin-top:16px;}
+	.middle{width:465px;height:330px;float:left;}
+	.ttt{width:465px;height:36px;
+		border-left:4px solid red;
+		font-size:24px;
+		line-height:36px;
+		}
+	.mright{width:495px;height:297px;float:left;}
+	
+	.bmiddle img{width:150px;height:150px;float:left;}
+	.textbox{width:270px;height:150px;float:right;}
+	.textbox div{width:270px;height:91px;margin:30px auto;}
+	.textbox a{font-size:22px;line-height:18px;text-decoration:none;display:block;}
+	.textbox span{font-size:22px;margin-top:12px;color:#7d7d7d;display:block;}
+	.update{float:right;line-height:15px;color:#7d7d7d;}
+	.rm{width:495px;height:239px;float:right;margin-top:16px;}
+	.lm{width:495px;height:36px;line-height:36px;float:right;}
+	
+	.rm img{width:208px;height:148px; margin-left:39px;}
+	.p{width:208px;height:70px;margin-left:39px;margin-top:15px;}
+	.rrr,.mmm{float:left;}
+	
+	.lm li{text-align:bottom;float:right;margin-left:6px;}
+	
+	.campaign{width:960px;height:450px;margin:0 auto;}
+	.camtitle{width:960px;height:36px;float:left;}
+	.camleft{width:109px;height:36px;float:left;}
+	.camright{width:309px;height:36px;float:right;}
+	.camcontent{width:960px;height:392px;float:left;}
+	.cambody{width:309px;height:176px;margin-top:25px;}
+	.cambody1,.cambody2{float:left;margin-right:15px;}
+	.cambody3{float:right;}
+	.campic{width:120px;height:176px;float:left;}
+	.campic img{width:120px;height:176px;}
+	.camp{width:172px;height:161px;float:right;}
+	.camp div{width:172px;}
+	.camp1{margin-top:18px;margin-bottom:15px;font-size:16px;height:40px;overflow:hidden;text-overflow: ellipsis;white-space:nowrap;}
+	.camp1 a{text-decoration:none;}
+	.camp2,.camp3,.camp3,.camp4,.camp5{margin-top:5px;margin-bottom:5px;overflow:hidden;text-overflow: ellipsis;white-space:nowrap;}
+	.camp li{height:60px;}
+	.camright li{margin-left:4px;float:right;}
+	.camleft{border-left:4px solid red;font-size:24px;}
+
+	.wrap{width:100%;height:228px;margin-top:100px;float:left;background:#222222;}
+	.wrapbox{width:987px;height:228px;margin:0 auto;}
+	.wrapleft{width:380px;height:148px;float:left;margin-top:40px;color:#ffffff;}
+	.wrapleft h4{width:305px;height:21px;margin-bottom:5px;}
+	.wrapleft p{width:305px;height:22px;}
+	.wrapmiddle{width:305px;height:157px;float:left;margin-top:40px;}
+	.wrapmiddle h4{margin-bottom:15px;color:#FFFFFF;}
+	.wrapmiddle p{width:305px;height:41px;}	
+	.wrapmiddle a{text-decoration:none;color:#FFFFFF;}
+	.ios a{background:url(img/ios.png) no-repeat;padding-left:25px;}
+	.android a{background:url(img/android.png) no-repeat;padding-left:25px;}
+	.windows a{background:url(img/windows.png) no-repeat;padding-left:25px;}
+
+	.wrapright{width:275px;height:149px;float:right;margin-top:40px;}
+	.wrapright h4{width:275px;height:22px;float:right;text-align:right;color:#FFFFFF;padding-bottom:10px;}
+	.wrapright div{float:right;}
+	.wrapright div p{width:20px;height:20px;float:left;margin-left:25px;}
+	
+	.qqicon{background:url(img/qq.png) no-repeat;}
+	.wechaticon{background:url(img/wechat.png) no-repeat;}
+	.xinlangicon{background:url(img/xinlang.png) no-repeat;}
+	.doubanicon{background:url(img/tudou.png) no-repeat;}
+	.footor{width:275px;height:22px;float:right;text-align:right;margin-top:40px;color:#FFFFFF;}
+	.fp{width:275px;height:22px;background:url(img/jilu.png) no-repeat right;float:right;margin-top:15px;}
+
+
+
+
+	 </style>
+ </head>
+ <body>
+ <!--导航头部设计-->
+	<div class="box">
+		<div class="nav">
+			<div class="left">
+				<img src="img/log.png"/>
+				<ul class="table1">
+					<li>期刊</li>
+					<li>单曲</li>
+					<li>专栏</li>
+					<li>活动</li>
+					<li>APP</li>
+				</ul>
+			</div>
+			<div class="right">
+				<ul class="table2">
+					<li>注册/登录</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="blank1"></div>
+
+	<div class="bannerbox">
+		<div class="imgbox">
+			<img src="img/title.jpg"/>
+		</div>
+	</div>
+
+	<div class="blank2">
+		<div class="leftlist"><span>音乐期刊</span></div>
+		<div class="rightlist">
+			<ul>
+				<li><a href="#">更多></a></li>
+				<li><a href="#">氛围</a></li> 
+				<li><a href="#">迷幻</a></li> 
+				<li><a href="#">暗潮</a></li> 
+				<li><a href="#">后摇</a></li> 
+				<li><a href="#">流行</a></li> 
+				<li><a href="#">电子</a></li>
+				<li><a href="#">英伦</a></li>
+				<li><a href="#">金属</a></li> 
+				<li><a href="#">民谣</a></li> 
+				<li><a href="#">独立音乐</a></li> 				
+			</ul>
+		</div>
+	</div>
+	
+	<div class="content">
+		<div class="bigimg">
+			<img src="img/马.png"/>
+			<p>vol.737 不舍</p>
+		</div>
+		<div class="topimg">
+			<img src="img/腿.png"/>
+			<p>vol.736 滚滚向黄昏</p>
+		</div>
+		<div class="bottomimg">
+			<img src="img/螺旋.png"/>
+			<p>vol.735 坐看云起</p>
+		</div>
+	</div>
+
+	<div class="block">
+		<div class="middle">
+			<div class="ttt"><span>原创推荐</span></div>
+			<div class="bmiddle">
+				<img src="img/圆图.png"/>
+				<div class="textbox">
+					<div>
+						<a href="#">A Glossy Flirt<br/></a>
+						<p><span>秘密行动</span><br/></p>
+						<p class="update">2015-07-16</p>
+					</div>
+				</div>
+			</div>
+			<p> 秘密行动乐队来自成都，他们将来自摇滚乐与电子乐的元素融合出一种充满现代感的独特味道，音乐带着一种粘稠的阴暗气质。秘密行动的“黑暗”并无刻意与乏味——他们蓬勃的节奏组、精彩的吉他和合成器段落都保留了一种属于年轻人的危险与性感。他们的音乐暧昧而危险，用电子乐激活未来摇滚乐的身体属性。 </p>
+		</div>
+
+		<div class="mright"> 
+			<div class="lm">
+				<ul>
+					<li>更多></li>
+					<li>专栏</li>
+					<li>单曲</li>
+				</ul>
+			</div>
+			
+			<div class="rm">
+				<div class="rrr">
+					<img src="img/马顿.jpg"/>
+					<div class="p">
+						<p>马頔：偶然遇见你</br></br></p>
+						<p>苏鲤鱼</p>
+					</div>
+				</div>
+				
+				<div class="mmm">
+					<img src="img/new.jpg"/>
+					<div class="p">
+						<p>Mew:他们是来自丹麦的喵星人</br></br></p>
+						<p>LUO</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="campaign">
+		
+		<div class="camtitle">
+		
+			<div class="camleft">热门活动</div>
+			<div class="camright">
+				<ul>
+					<li>更多></li>
+					<li>香港</li>
+					<li>台湾</li> 
+					<li>成都</li> 					
+					<li>武汉</li> 					
+					<li>深圳</li>					
+					<li>广州</li>					
+					<li>上海</li> 
+					<li>北京</li> 
+				</ul>
+			</div>
+		</div>
+		<div class="camcontent">
+			<div class="cambody cambody1">
+				<div class="campic">
+					<img src="img/冰岛.png">
+				</div>
+				<div class="camp">
+					<div class="camp1"><a href="#">冰岛乐队</br>BangGang2015年新专辑巡演</a></div>
+					<div class="camp2">时间：2015-11-13</div>
+					<div class="camp3">地点：北京</div>
+					<div class="camp4">场所：糖果TANGO</div>
+					<div class="camp5">费用：230元 - 300元</div>
+				</div>
+			</div>
+			<div class="cambody cambody2">
+				<div class="campic">
+					<img src="img/muse.png">
+				</div>
+				<div class="camp">
+				
+					<div class="camp1"><a href="#">Muse亚洲巡演</a></div>
+					<div class="camp2">时间：2015-09-19</div>
+					<div class="camp3">地点：北京</div>
+					<div class="camp4">场所：万事达中心（五棵松体育馆）</div>
+					<div class="camp5">费用：380元 - 1280元</div>
+				</div>
+			</div>
+			<div class="cambody cambody3">
+				<div class="campic">
+					<img src="img/关于爱情.png">
+				</div>
+				<div class="camp">
+					<div class="camp1"><a href="#">“关于爱情”小娟&山谷里</br>的居民七夕演唱会</a></div>
+					<div class="camp2">时间：2015-08-20</div>
+					<div class="camp3">地点：北京</div>
+					<div class="camp4">场所：北京展览馆剧场</div>
+					<div class="camp5">费用：180元-707元</div>
+				</div>
+			</div>
+			<div class="cambody cambody1">
+				<div class="campic">
+					<img src="img/瑞典.png">
+				</div>
+				<div class="camp">
+					<div class="camp1"><a href="#">瑞典另类潮核Her</br>Bright Skies首次中国巡演</a></div>
+					<div class="camp2">时间：2015-08-14</div>
+					<div class="camp3">地点：北京</div>
+					<div class="camp4">场所：愚公移山</div>
+					<div class="camp5">费用：80元-120元</div>
+				</div>
+			</div>
+			<div class="cambody cambody2">
+				<div class="campic">
+					<img src="img/丹麦.png">
+				</div>
+				<div class="camp">
+					<div class="camp1"><a href="#">丹麦另类摇滚梦幻天团</br>Mew中国巡演</a></div>
+					<div class="camp2">时间：2015-08-11</div>
+					<div class="camp3">地点：北京</div>
+					<div class="camp4">场所：糖果TANGO</div>
+					<div class="camp5">费用：220元-280元</div>
+				</div>
+			</div>
+			<div class="cambody cambody3">
+				<div class="campic">
+					<img src="img/美国.png">
+				</div>
+				<div class="camp">
+					<div class="camp1"><a href="#">美国Power Pop乐队OK</br>Go中国巡演</a></div>
+					<div class="camp2">时间：2015-07-30</div>
+					<div class="camp3">地点：北京</div>
+					<div class="camp4">场所：糖果TANGO</div>
+					<div class="camp5">费用：340元-380元</div>
+				</div>
+			</div>
+	</div>
+</div>
+	<div class="wrap">
+		<div class="wrapbox">
+			<div class="wrapleft">
+				<h4>关于</h4>
+				<p>关于落网</p>
+				<p>加入我们</p>
+				<p>联系合作</p>
+				<p>反馈建议</p>
+				<p>友情链接</p>
+			</div>
+			<div class="wrapmiddle">
+				<h4>APP</h4>
+				<p class="ios">
+					<a href="#">
+						&nbspfor&nbspiphone
+					</a>
+				</p>
+				<p class="android">
+					<a href="#">
+						&nbspfor&nbspandroid
+					</a>
+				</p>
+				<p class="windows">
+					<a href="#">
+						&nbspfor&nbspwindows&nbspphone&nbsp8
+					</a>
+				</p>
+			</div>
+			<div class="wrapright">
+				<h4>关注落网</h4>
+				<div>
+					<a href="#"><p class="qqicon"></p></a>
+					<a href="#"><p class="wechaticon"></p></a>
+					<a href="#"><p class="xinlangicon"></p></a>
+					<a href="#"><p class="doubanicon"></p></a>
+				</div>
+				<p class="footor">@&nbsp2015&nbsp落网</p>
+				<p class="fp"></p>
+			
+			
+			
+			</div>
+		</div>
+	</div>
+
+
+	
+ </body>
+</html>
+

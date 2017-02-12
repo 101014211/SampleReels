@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus?">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	*{padding:0;margin:0;font-family:"微软雅黑";}
+	body{height:100%;background:#EDEDEF;}
+	.head{width:100%;height:82px;background-color:#24292C;}
+	.head .navbox{width:925px;height:100px;margin:0 auto;}
+	.head .navbox .logo{background:url(img/hd.png) 0 0 no-repeat;display:inline-block;width:220px;height:82px;margin-top:20px;float:left;position:absolute;}
+	
+	.head .navbox .nav{float:left;margin-left:300px;}
+	.head .navbox .nav li{list-style:none;color:white;float:left;height:82px;line-height:82px;margin-right:25px;font-size:16px;}
+	.head .navbox .nav li a{text-decoration:none;color:white;}
+	.head .navbox .searchbox{width:226px;height:30px;background:url(img/search.png) 0px -40px no-repeat;float:right;margin-top:25px;position:relative;border:none;}
+	.head .navbox .searchbox .searchboxinf{width:184px;height:30px;text-align:center;margin-left:26px;}
+	.head .navbox .searchbox .searchboxinf .xtag{display:inline-block;color:white;width:184px;height:24px;padding:3px;border:none;  
+									background-color:transparent;outline:none;"}
+	.head .navbox .searchbox .searchboxinf .stn{display:inline-block;width:18px;height:18px;position:absolute;top:6px;left:10px;background:url(img/search.png) 0 -81px no-repeat;"}
+	.head .navbox .searchbox .searchboxinf .new{width:40px;height:18px;position:absolute;background:url(img/search.png);background-position:-210px -81px;top:6px;right:5px;}
+	.righttag{width:0;height:0;border-top:14px solid #FFF;border-right:14px solid #FFF;border-bottom:14px solid #FFF;
+								border-left:14px solid #FFF;position:absolute;top:-28px;right:0;}
+	.text:hover .righttag{border-top:14px solid #EDEDEF;;border-right:14px solid #EDEDEF;border-bottom:14px solid #CDCDCD;
+								border-left:14px solid #CDCDCD;}
+	
+  .con .context .maintext p{font-size:14px;line-height:1.6;margin-top:15px;}
+  .con .text  .fo ul{margin-left:28px;}
+  .con .text .foo ul{margin-right:28px;}
+  .con .text .fo li{list-style:none;float:left;margin-right:20px;font-size:12px;color:#aaa;text-decoration:none;}
+  .con .text .fo li a{text-decoration:none;}
+  .con .text .foo li{list-style:none;float:left;margin-left:20px;font-size:12px;color:#aaa;}
+  .con .text .foo li a{text-decoration:none;}
+  .right .rightbox .personName .name{width:156px;float:left;border:1px solid #DFDFDF;margin-bottom:20px;height:45px;padding-top:5px;padding-bottom:5px;padding-left:10px;}
+  .right .rightbox .personName .add{width:60px;float:left;border:1px solid #DFDFDF;height:55px;}
+   #personInf .lia{width:228px;height:16px;border:1px solid #DFDFDF;background:#F3F3F3;}
+   #personInf a{display:inline-block;width:100%;}
+  .right .someinterest ul{list-style:none;width:215px;margin-top:15px;}
+  .right .someinterest ul .someli{width:215px;height:30px;border:1px solid #DEDEDE;padding:7px;}
+  .right .someinterest ul .someli img{width:30px;height:30px;float:left;}
+  .right .someinterest ul .someli p{float:left;margin-left:10px;line-height:15px;}
+  .right .someinterest ul .someli p .tit{font-size:14px;}
+  .right .someinterest ul .someli p .in{font-size:12px;color:#aaa;}
+  .right .someinterest ul .find{height:20px;width:215px;padding:7px;border:1px solid #DEDEDE;font-size:12px;line-height:18px;color:#888;}
+  .right .more ul{list-style:none;margin-top:20px;}
+  .right .more ul .topic{width:220px;height:20px;background:url(img/icon24.png) 8px -3334px no-repeat;padding:5px;background-color:#DFDFDF;border:1px solid #CFCFCF;line-height:35px;}
+  .right .attention{float:left;background:#FFF;height:100%;}
+  .right .attention ul{list-style:none;}
+  .right .attention ul li{float:left;}
+  .right .attention .piclist li{margin:5px;}
+  .clear {margin:0;padding:0;border:0;clear:both;}
+ </style>
+ <script>
+	window.onload=function (){
+	var oD=document.getElementById("personInf");
+	
+	var aLi = oD.getElementsByTagName("li");
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].index=i;
+		aLi[i].onmouseover=function(){aLi[this.index].style.background="#FFF";};
+		aLi[i].onmouseout=function(){aLi[this.index].style.background="#F3F3F3";};
+	}
+	
+	};
+	
+	
+ </script>
+ </head>
+ <body>
+	<div class="head">
+		<div class="navbox">
+			<a class="logo" href="#"></a>
+			<div class="nav">
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">浏览</a></li>
+					<li><a href="#">APP</a></li>
+					<li><a href="#">导入</a></li>
+					<li><a href="#">ART</a></li>
+					<li><a href="#">更多</a></li>
+				</ul>
+			</div>
+			<div class="searchbox">
+				<div class="searchboxinf">
+					<form>
+						<a href="#" class="stn"></a>	
+						<input class="xtag" type="text" placeholder="搜索标签、人" onfocus="onfocus";/>
+					</form>
+					<div class="new"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mainbox" style="width:100%;">
+		<div class="maincon" style="width:925px;margin:30px auto;">
+			<div class="left" style="width:674px;float:left;position:relative;">
+				<div class="bg" style="background:url(img/title.png)no-repeat;display:inline-block;position:absolute;width:674px;height:110px;left:-2px;"></div>
+				<ul style="list-style:none;margin-top:;">
+					<li style="position:relative;width:110px;height:110px;float:left;">
+						<a href="#" style="display:inline-block;width:110px;height:110px;"></a>
+					</li>
+					<li style="position:relative;width:140px;height:110px;float:left;">
+						<a href="#" style="display:inline-block;width:140px;height:110px;"></a>
+					</li>
+					<li style="position:relative;width:140px;height:110px;float:left;">
+						<a href="#" style="display:inline-block;width:140px;height:110px;"></a>
+					</li>
+					<li style="position:relative;width:140px;height:110px;float:left;">
+						<a href="#" style="display:inline-block;width:140px;height:110px;"></a>
+					</li>
+					<li style="position:relative;width:140px;height:110px;float:left;">
+						<a href="#" style="display:inline-block;width:140px;height:110px;"></a>
+					</li>
+				</ul>
+				<div class="con" style="width:670px;float:left;margin-top:25px;">
+					<div style="width:68px;height:68px;float:left;">
+						<a href="#" style="display:inline-block;"><img src="img/imgsize.jpg"/></a>
+					</div>
+					
+					<div style="height:28px;width:530px;float:left;margin-left:42px;background:#FFF;"></div>
+					
+					<div class="text" style="width:558px;float:left;margin-left:42px;background:#FFF;position:relative;">
+						<div class="lefttag" style="float:left;width:0;height:0;
+										border-bottom:14px solid transparent;border-top:14px solid #FFF;
+										border-left:14px solid transparent;border-right:14px solid #FFF;
+										position:absolute;left:-28px;top:-28px;">
+						</div>
+						
+						<div class="righttag"></div>
+						
+						<div class="context" style="margin:0 28px 0 28px;float:left;">
+						
+							<p sytle="font-size:14px;line-height:19px;color:#888;">LOFTER官方博客</p>
+							<div class="imgbox" style="width:164px;height:164px;float:left;margin-top:15px;margin-right:25px;">
+								<a href="#"><img style="width:162;height:162px;" src="img/NodYoung.jpg"/></a>
+							</div>
+							
+							<p style="font-size:14px;line-height:1.6;margin-top:15px;">【今日推荐】 @Nod Young 是“老罗和他的朋友们”公司创意总监，在艺术及设计领域展现出
+							   独特的风格与见解，规整缜密的曲线、充满律动的布局以及优美欢快的色彩已经成为Nod最为典型的艺术语言。
+							</p>
+							<p style="margin-top:10px;font-weight:bold;font-size:14px;">戳→_→关注 <span><a href="#" style="text-decoration:none;">@Nod Young</a><span> </p>
+						</div>
+						<div class="fo" style="float:left;padding-top:20px;padding-bottom:30px;">
+							<ul>
+								<li><a href="#">LOFTER</a></li>
+								<li><a href="#">推荐好博客</a></li>
+							</ul>
+						</div>
+						<div class="foo" style="float:right;padding-top:20px;padding-bottom:30px">
+							<ul>
+								<li><a href="#">热度</a></li>
+								<li><a href="#">评论(110)</a></li>
+								<li><a href="#">分享(110)</a></li>
+								<li><a href="#">推荐</a></li>
+								<li><a href="#">♥</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+			
+			
+				<div class="con" style="width:670px;float:left;margin-top:25px;">
+					<div style="width:68px;height:68px;float:left;">	
+					</div>
+					
+					<div style="height:28px;width:530px;float:left;margin-left:42px;background:#FFF;"></div>
+					
+					<div class="text" style="width:558px;float:left;margin-left:42px;background:#FFF;position:relative;">
+						<div class="righttag"></div>
+						
+						<div class="context" style="margin:0 28px 0 28px;float:left;">
+							<p sytle="font-size:14px;line-height:19px;color:#888;">LOFTER官方博客</p>
+							<div class="imgbox" style="width:164px;height:164px;float:left;margin-top:15px;margin-right:25px;">
+								<a href="#"><img style="width:164px;height:164px;" src="img/hm.jpg"/></a>
+							</div>
+							
+							
+							<p style="font-size:14px;line-height:1.6;margin-top:15px;">【今日推荐】街头摄影师 @荒木大道  本名周丹，1981年生于湖北荆州，
+										西南交通大学材料学硕士，现居北京，发动机工程师。他特别喜爱荒木经惟的《东京日和》，里面都是日常的点滴，平淡而
+										真实。他也迷恋森山大道，一个顽固的老头在日本街头流摄了一辈子，在街道的每个角落观察这这个世界的阴暗。荒木是“猫”，
+										森山是“犬”，也许这是周丹对于大师影像的自我认识，而这种认识也让他的作品在看似《东京日和》里一般平静细腻，确有又
+										夹杂着森山流摄街头时寻觅的强烈。
+							</p>
+								
+							<p style="margin-top:10px;font-weight:bold;font-size:14px;">戳→_→关注<a href="#" style="text-decoration:none;">@荒木大道</a></p>
+								
+							
+						</div>
+						<div class="fo" style="float:left;padding-top:20px;padding-bottom:30px;">
+								<ul>
+									<li><a href="#">LOFTER</a></li>
+									<li><a href="#">推荐好博客</a></li>
+								</ul>
+						</div>
+						<div class="foo" style="float:right;padding-top:20px;padding-bottom:30px;">
+							<ul>
+								<li><a href="#">热度</a></li>
+								<li><a href="#">评论(110)</a></li>
+								<li><a href="#">分享(110)</a></li>
+								<li><a href="#">推荐</a></li>
+								<li><a href="#">♥</a></li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+				
+				
+				<div class="con" style="width:670px;float:left;margin-top:25px;">
+				<!--左边图片标签-->
+					<div style="width:68px;height:68px;float:left;position:relative;">
+						<a href="#" style="display:inline-block;">
+							<img src="img/plnet.jpg" style="width:68px;height:68px;"/>
+						</a>
+						<a href="#">
+							<img src="img/min.jpg" style="width:30px;height:30px;position:absolute;left:38px;top:38px;"/>
+						</a>
+					</div>
+				<!--文章头部空白区域-->
+					<div style="height:28px;width:530px;float:left;margin-left:42px;background:#FFF;"></div>
+					
+					<div class="text" style="width:558px;float:left;margin-left:42px;background:#FFF;position:relative;">
+					<!--左边三角-->
+						<div class="lefttag" style="float:left;width:0;height:0;border-bottom:14px solid transparent;border-top:14px solid #FFF;border-left:14px solid transparent;border-right:14px solid #FFF;position:absolute;left:-28px;top:-28px;">
+						</div>
+					<!--右边三角标签-->
+						<div class="righttag"></div>
+					<!--正文部分-->
+						<div class="context" style="margin:0 28px 0 28px;float:left;">
+							<p sytle="font-size:14px;line-height:19px;color:#888;">
+								<a href="#">灵感星球</a>
+								<span>转载自</span>
+								<a href="#">工业设计俱乐部</a>
+							</p>
+							
+							<div class="imgbox" style="width:164px;height:231px;float:left;margin-top:15px;margin-right:25px;">
+								<a href="#"><img style="width:164px;height:231px;" src="img/durex.jpg"/></a>
+							</div>
+							
+							<div class="maintext"style="float:left;">
+								<p><a href="#">工业设计俱乐部:</a></p>
+								<p>声明：18岁以下设计师勿进</p>
+								<p style="font-weight:bold;">设计师对 DUREX 新的理解：打印</p>
+								<p>设计：Andrej Krahne（德国）</p>
+							</div>
+							
+						</div>
+						
+						<div class="fo" style="float:left;padding-top:20px;padding-bottom:30px;">
+								<ul>
+									<li><a href="#">设计</a></li>
+									<li><a href="#">平面设计</a></li>
+									<li><a href="#">视觉传达</a></li>
+								</ul>
+						</div>
+						<div class="foo" style="float:right;padding-top:20px;padding-bottom:30px;">
+							<ul>
+								<li><a href="#">热度</a></li>
+								<li><a href="#">评论(110)</a></li>
+								<li><a href="#">分享(110)</a></li>
+								<li><a href="#">推荐</a></li>
+								<li><a href="#">♥</a></li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="right" style="width:230px;float:left;margin-left:21px;height:100%;">
+				<div class="rightbox" style="width:230px;float:left;">
+					<div class="personName" style="width:230px;height:55px;float:left;">
+						<ul style="list-style:none;">
+							<li class="name">
+								<a href="#" style="display:inline-block;width:100%;text-decoration:none;">
+									<span style="font-size:14px">bjfuwt</span></br>
+									<span style="font-size:12px">bjfuwt.lofter.com</span>
+								</a>
+							</li>
+							<li class="add" style="background:url(img/search.png) -196px -147px no-repeat;"><a href="#" style="display:inline-block;width:55px;height:53px;"><span></span></a></li>
+						</ul>
+					</div>
+					<div id="personInf"style="float:left;">
+						<ul style="list-style:none;">
+							<li class="wenzhang lia" style="padding:10px 0;">
+								<a href="#">
+									<span style="display:block;float:left;width:140px;margin-left:16px;padding-left:30px;height:20px;line-height:20px;font-size:14px;background:url(img/icon24.png) 0px -1685px no-repeat;">文章</span>
+									<span style="width:40px;height:20px;display:block;float:left;font-size:14px;line-height:20px;text-align:center;">0</span>
+								</a>
+							</li>
+							<li class="fensi lia" style="padding:10px 0;">
+								<a href="#">
+									<span style="display:block;float:left;width:140px;margin-left:16px;padding-left:30px;height:20px;line-height:20px;font-size:14px;background:url(img/icon24.png) 0px -1757px no-repeat;">粉丝</span>
+									<span style="width:40px;height:20px;display:block;float:left;font-size:14px;line-height:20px;text-align:center;">6</span>
+								</a>
+							</li>
+							<li class="guanzhu lia" style="padding:10px 0;">
+								<a href="#">
+									<span style="display:block;float:left;width:140px;margin-left:16px;padding-left:30px;height:20px;line-height:20px;font-size:14px;background:url(img/icon24.png) 0px -288px no-repeat;">关注</span>
+									<span style="width:40px;height:20px;display:block;float:left;font-size:14px;line-height:20px;text-align:center;">2</span>
+								</a>
+							</li>
+							<li class="tongzhi lia" style="padding:10px 0;">
+								<a href="#">
+									<span style="display:block;float:left;width:140px;margin-left:16px;padding-left:30px;height:20px;line-height:20px;font-size:14px;background:url(img/icon24.png) 0px -1823px no-repeat;">通知</span>
+									<span style="width:40px;height:20px;display:block;float:left;font-size:14px;line-height:20px;text-align:center;"></span>
+								</a>
+							</li>
+							<li class="sixin lia" style="padding:10px 0;">
+								<a href="#">
+									<span style="width:140px;height:20px;display:block;float:left;margin-left:16px;padding-left:30px;line-height:20px;font-size:14px;background:url(img/icon24.png) 0px -1967px no-repeat;">私信</span>
+									<span style="width:40px;height:20px;display:block;float:left;background:url(img/search.png) 9px -224px no-repeat;font-size:14px;line-height:20px;text-align:center;color:#FFF;">1</span>
+								</a>
+							</li>
+							<li class="set" style="padding-top:8px;padding-bottom:7px;width:228px;height:16px;background:#F7F7F7;">
+								<a href="#">
+									<span style="display:block;float:left;width:25px;margin-left:16px;height:18px;background:url(img/icon24.png) 0px -1601px no-repeat;"></span>
+									<span style="width:140px;height:18px;display:block;float:left;font-size:14px;line-height:18px;">个人主页设置</span>
+								</a>
+							</li>
+						</ul>
+						
+					</div>
+				
+				</div>
+				<div class="ad" style="width:230px;flaot:left;">
+					<a href="#"><img src="img/ad.jpg" style="width:230px;margin-top:20px;"/></a>	
+				</div>
+				<div class="someinterest" style="float:left;">
+					<ul>
+						<li class="someli"><img src="img/R.jpg" /><p><span class="tit">画画的Ray</br></span><span class="in">绘画达人</span></p></li>
+						<li class="someli"><img src="img/tuanzi.jpg"/><p><span class="tit">团子 in BJ</br></span><span class="in">买买买达人</span></p></li>
+						<li class="someli"><img src="img/circle.jpg"/><p><span class="tit">张艾斯</br></span><span class="in">你可能喜欢的人</span></p></li>
+						<li class="find" style="background:url(img/icon24.png) 14px -354px no-repeat;"><p style="width:180px;margin-left:40px;float:left;">发现达人</p></li>
+					</ul>
+				</div>
+				<div class="more" style="float:left;">
+					<ul>
+						<li style="width:230px;height:98px;overflow:hidden;position:relative;">
+							<a href="#">
+								<img src="img/bgg.jpg" style="width:100%" />
+								<span style="display:inline-block;position:absolute;left:10px;top:30px;color:#fff;">
+								艺术家绘制液态少女，看起来会流动哟!
+								</span>
+							</a>
+						</li>
+						<li class="topic" style="background:#E7E7E7;">
+							<p style="width:170px;height:20px;line-height:20px;padding-left:25px;font-size:12px;color:#aaa;">
+							更多专题
+							</p>
+						</li>
+						
+					</ul>
+				</div>
+				<div class="attention" style="float:left;margin-top:15px;">
+					<div class="titlelist" style="text-align:center;margin-top:15px;">
+						<img src="img/Mad.jpg" style="border-radius:50px;"/>
+						<p><span class="Mad" style="font-size:16px;">MadSexyKaiEXO</br></span><span class="jinzhong" style="font-size:12px;">金钟仁饭拍</span></p>
+					</div>
+					<div class="piclist" style="margin-top:10px;">
+						<ul>
+							<li><img src="img/1.jpg"/></li>
+							<li><img src="img/2.jpg"/></li>
+							<li><img src="img/3.jpg"/></li>
+							<li><img src="img/4.jpg"/></li>
+						</ul>
+					</div>
+					<div style="float:left;padding:5px;">
+						<p style="background:#9AC600;border-radius:5px;width:210px;height:40px;text-align:center;line-height:40px;font-size:18px;"><span>+</span><span>关注</span></p>
+					</div>
+				</div>
+			
+			</div>	
+		</div>
+	</div>	
+	<div class="clear"></div>
+ </body>
+</html>

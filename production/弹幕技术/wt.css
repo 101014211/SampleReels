@@ -1,0 +1,51 @@
+.magictime{
+	-webkit-animation-name:wt;
+	-webkit-animation-duration:3s;
+	-moz-animation-duration:3s;
+	-ms-animation-duration:3s;
+	-o-animation-duration:3s
+	animation-duration:3s;
+	-webkit-animation-fill-mode:both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+}
+.rotateUp{
+	-webkit-backface-visibility:visible !important;
+	-moz-backface-visibility:visible !important;
+	-ms-backface-visibility:visible !important;
+	-o-backface-visibility:visible !important;
+	backface-visibility:visible !important;
+	-webkit-animation-name:rotateUp;
+	-moz-animation-name:rotateUp;
+	-ms-animation-name:rotateUp;
+	-o-animation-name:rotateUp;
+	animation-name:rotateUp;
+}
+.trans{
+   transition: all 4s ease;
+   
+}
+
+.trans1{
+    -webkit-transform:rotate(360deg) scale(1,1);
+    -moz-transform:rotate(360deg) scale(1,1);
+    -o-transform:rotate(360deg) scale(1,1);
+    -ms-transform:rotate(360deg) scale(1,1);
+    transform:rotate(360deg) scale(1,1); 
+	-webkit-transition:all 1s ease-in-out;
+}
+
+@-webkit-keyframes wt{
+
+0%{font-size:10px;
+	-webkit-transform:rotate(0deg)
+	
+}
+
+30%{font-size:15px;-webkit-transform:rotate(180deg)}
+
+100%{font-siez:12px;-webkit-transform:rotate(360deg)}
+
+}

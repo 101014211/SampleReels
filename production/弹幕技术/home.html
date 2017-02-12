@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+	<style type="text/css">
+		body{background:#4C4F69;}
+		.box{width:1024px;
+			text-align:center;
+			margin:0 auto;
+			position:relative;
+			}
+		h1{
+			color:white;
+			text-shadow:2px 2px 5px #000;
+		}		
+		.dm{
+			width:1024px;
+			height:555px;
+			background:rgba(255,0,0,0);
+			margin:0 auto;
+			position:absolute;
+			z-index:1;
+			top:60px;
+			left:0px;
+		}
+		.dm_show{
+			position:relative;
+			color:red;
+		}
+		.dm_show div{
+			position:absolute;
+			top:76px;
+			right:0px;
+			line-height:36px;
+			font-size:22px;
+		}
+		.s_dm{
+			/*a标签是行级元素*/
+			display:block;
+			width:40px;
+			height:40px;
+			border-radius:20px;
+			line-height:40px;
+			border:1px solid #fff;
+			position:absolute;
+			background:gray;
+			z-index:100;
+			left:0px;
+			top:60px;
+		}
+		.e_dm{
+			/*a标签是行级元素*/
+			display:block;
+			width:40px;
+			height:40px;
+			border-radius:20px;
+			line-height:40px;
+			border:1px solid #fff;
+			position:absolute;
+			background:gray;
+			z-index:100;
+			right:0px;
+			top:0px;
+		}
+	</style>
+	<link type="text/css" rel="stylesheet" href="wt.css"></link>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+		$(function (){
+			$(".s_dm").toggle();
+			$(".s_dm").click(function(){
+				$(".dm,.s_dm").toggle("slow");
+			});
+
+			$(".e_dm").click(function(){
+				$(".s_dm,.dm").toggle("slow");
+			});
+		var cssWT = ["magictime","",""];
+		init_screen();
+		$(".s_btn").click(function(){
+			var value = $('.s_txt').val();
+			var tempDiv = $("<div class='magictime'>"+value+"</div>");
+			$(".dm_show").append(tempDiv);
+			init_screen();
+		});
+		//初始化屏幕
+		function init_screen(){
+			var _top = 0;
+
+			$(".dm_show").find("div").show().each(function(){
+				_top = _top+76;
+				
+				if(_top>=$(".dm").height()-100){
+					_top = 0;
+				}
+				
+				var _left = $(".dm").width()-$(this).width();
+				
+				$(this).css({left:_left,top:_top,color:getRandomColor()});
+				//动起来
+				var time = Math.ceil(800+Math.random()*10000);
+				$(this).animate({left:"-"+_left+"px"},time,function(){
+					$(this).remove();
+				});
+					
+				});
+			}
+		
+		});
+
+		function getRandomColor(){
+			var str = Math.ceil(Math.random()*16777215).toString(16);
+			while(str.length<6){
+				str = '0'+str;
+			}
+			return "#"+str;
+		}
+	</script>
+ </head>
+ <body>
+	<div class="box">
+		<h1>温涛弹幕技术</h1>
+		<embed src="http://player.youku.com/player.php/sid/XODUyNTE2MDc2/v.swf" allowFullScreen="true" quality="high" width="1024" height="600" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+		<!--让href指向一个javascript代码-->
+		<a class="s_dm" href="javascript:void(0)">弹幕</a>
+		<!--弹幕开始-->
+		<div class="dm">
+			<a class="e_dm" href="javascript:void(0)">X</a>
+			<div class="dm_show">
+				<div>我喜欢你dsafdsafdas啊</div>
+				<div>我喜欢你啊1</div>
+				<div>我喜欢dffdfgfsgf大概是你啊2</div>
+				<div>我喜欢多少你啊3</div>
+				<div>我喜规范的公司公司人文关怀为二个外国人我你啊4</div>
+				<div>我喜欢热而呃呃你啊5</div>
+			</div>
+		</div>
+		<!--弹幕结束-->
+		<div class="send">
+			<input type="text" class="s_txt"/>
+			<a href="javascript:void(0);" class="s_btn">发表评论</a>
+		</div>
+	</div>
+	
+ </body>
+</html>
+
+
+
+
+<!--"+cssWT[Math.ceil(Math.random()*3)]+"-->

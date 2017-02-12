@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="gb2312">
+  <meta name="Generator" content="EditPlus?">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>百度HOME</title>
+ <style>
+	*{padding:0;margin:0;}
+	body{font-size:14px;font-family:"微软雅黑";}
+	.bg{background:url(img/bg.jpg) no-repeat; background-attachment:fixed;background-size:cover;height:100%;width:100%;position:fixed;
+		top:0;left:0;z-index:-1;}
+	.header{height:34px;width:100%;line-height:34px;min-width:940px;}
+	.header .headbg{height:34px;background:#000;width:100%;opacity:0.2;position:absolute;}
+	.header .headtext{height:34px;width:100%;color:#FFF;position:relative;}
+	.header .headtext .weather{width:190px;height:34px;float:left;margin-left:20px;}
+	.header .headtext .weather span{margin-right:5px;}
+	.header .headtext .weather .wea{background:url(img/night.png) no-repeat;display:inline;padding-left:20px;}
+	.header .headtext .toolLeft{width:110px;height:34px;float:left;}
+	.header .headtext .toolLeft a{margin-right:5px;text-decoration:underline;color:white;}
+	.header .headtext .toolRight{width:600px;height:34px;float:right;color:white;}
+	.header .headtext .toolRight a{float:right;display:inline-block;padding-right:20px;font-size:13px;
+						font-weight:bold;text-decoration:underline;}
+	.header .headtext .more{width:135px;height:50px;float:right;}
+	.header .headtext .more .MorePuduct{display:inline-block;float:right;width:60px;height:34px;color:white;background:#38f;
+						line-height:34px;font-size:13px;text-align:center;border-bottom:1px solid #38f;
+						margin-left:10px;margin-right:20px;}
+	.header .headtext .more .set{float:right;}
+	.main{width:910px;height:600px;margin:0 auto;}
+	.main .logo{height:129px;text-align:center;margin-top:40px;}
+	.main .logo img{width:270px;height:129px;}
+	.main .sbox{height:40px;width:645px;margin:20px auto;border:2px solid red;}
+	.main .sbox input{border:0;height:40px;width:535px;font-size:16px;float:left;text-indent:0.7em;box-shadow:inset 0 0 2em #CDCDCD;
+					outline:none;}
+	.main .sbox a{display:inline-block;width:110px;height:40px;background:#E5E5E5;text-align:center;line-height:40px;
+					text-decoration:none;font-size:16px;}
+	.main .middle .nav{width:80px;height:320px;margin-top:40px;float:left;}
+	.main .middle .nav .navbg{width:80px;height:320px;background:#000;opacity:0.2;position:absolute;}
+	.main .middle .nav .navtext{width:80px;height:320px;position:relative;}
+	.main .middle .nav .navtext li{text-align:center;font-size:14px;line-height:35px;}
+	.main .middle .nav li a{color:#FFF;display:block;}
+	
+ </style> 
+ </head>
+ <body >
+	<div class="bg"></div>
+	<div class="header">
+		<div class="headbg"></div>
+		<div class="headtext">
+			<div class="weather">
+				<span class="location">北京：</span>
+				<span class="wea" style="">29℃</span>
+				<span class="info" >轻度 115</span>
+				<span class="tag">|</span>
+			</div>
+			<div class="toolLeft">
+				<a href="#">宝箱</a>
+				<a href="#">换肤</a>
+				<a href="#">消息</a>
+			</div>
+			<div class="more">
+			
+				<a class="MorePuduct">更多产品</a>
+				<a class="set">设置</a>
+			</div>
+			<div class="toolRight">
+				<a style="float:right;">温涛x</a>
+				<a style="float:right;">贴吧</a>
+				<a style="float:right;">视频</a>
+				<a style="float:right;">地图</a>
+				<a style="float:right;">hao123</a>
+				<a style="float:right;">新闻</a>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="logo">
+			<img src="img/logo.png">
+		</div>
+		<div class="sbox">
+			<p>
+				<input type="text" autofocus="aotofocus" placeholder="请输入您要搜索的关键字..."/>
+				<a href="#">百度一下</a>
+			</p>
+		</div>
+		<div class="middle">
+			<div class="nav">
+				<div class="navbg"></div>
+				<div class="navtext">
+					<ul style="list-style:none;">
+						<li><a>导航</a></li>
+						<li><a>视频</a></li>
+						<li><a>新闻</a></li>
+						<li><a>股票</a></li>
+						<li><a>音乐</a></li>				
+					</ul>
+				</div>
+			</div>
+			<div class="infshow" style="width:800px;height:320px;float:left;margin-top:40px;margin-left:20px;">
+				<img src="img/nav.png"/>
+			</div>
+			<div class="infshow" style="width:800px;height:320px;float:left;margin-top:40px;margin-left:20px;display:none;">
+				<img src="img/nav.png"/>
+			</div>
+		</div>
+	</div>
+	
+	<div class="footer">
+	
+	</div>
+ </body>
+</html>

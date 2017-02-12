@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>雷锋网</title>
+  <style type="text/css">
+	*{padding:0px;margin:0px;font-family:"微软雅黑";}
+
+	.header{width:1098px;height:80px;margin:0 auto;display:relative;}
+	.header .heaimg{width:515px;height:52px;float:left;margin-top:14px;}
+	.header .heaimg img{float:left;}
+	.header .heaimg p{float:left;line-height:52px;color:#606060;}
+	.header .search{float:left;}
+	.header .search input{display:inline-block;float:left;height:28px;width:350px;margin-top:25px;border:1px solid #DD6E4C;}
+	.header .search button{float:left;margin-top:23px;height:32px;}
+	.header .login{width:85px;height:52px;float:right;}
+	.header .login img{margin-top:25px;border-radius:15px;}
+	.header .login p{line-height:80px;float:right;padding-right:15px;color:#606060;font-size:14px;}
+	.nav{width:100%;height:50px;background:#313131;border-bottom:2px solid #DD6E4C;color:#FFF;}
+	.nav .nav_box{width:1098px;margin:0 auto;}
+	.nav .nav_left li{float:left;margin-top:15px;padding-right:35px;list-style:none;}
+	.nav .nav_right li{float:right;margin-top:15px;margin-left:35px;font-size:14px;}
+
+	.mainmetter{width:1098px;margin:0 auto;}
+	
+	.box{width:780px;float:left;}
+	.box .content{width:780px;margin-top:40px;float:left;}
+	.box .content .topcontent{width:500px;height:380px;float:left;}
+	.box .content .topcontent .mainpic{width:500px;height:270px;float:left;}
+	
+	
+	.box .content .topcontent .ins{width:440px;height:110px;float:left;background:#3D3D3D;}
+	.box .content .topcontent .ins .title{font-size:20px;padding-top:15px;padding-left:20px;color:#FFF;}
+	.box .content .topcontent .ins .middle{font-size:12px;padding-top:10px;line-height:20px;color:#FFF;padding-left:20px;padding-right:15px;}
+	.box .content .topcontent .updownimg{width:60px;height:110px;float:left;background:#3D3D3D;}
+	.box .content .topcontent .updownimg .upimg,.downimg{float:left;padding-left:11px;}
+	.box .content .topcontent .updownimg .upimg{padding-top:15px;}
+	.box .content .topcontent .updownimg .downimg{padding-top:10px;}
+	.box .content .list{width:280px;height:380px;float:left;background:#FAFAFA;}
+	.box .content .list img{padding-top:20px;margin-left:15px;}
+	.box .content .list p{border-bottom:1px  dashed #CBCBCB;margin-left:15px;line-height:52px;color:#272322;font-size: 18px;font-weight: bold;}
+
+	.box .content .docli{width:780px;float:left;margin-top:20px;}
+	.box .content .docli .doctitle{width:780px;font-size:26px;border-bottom:solid 2px #666666;float:left;}
+	.box .content .docli .list1{width:390px;height:150px;float:left;}
+	.box .content .docli .list1 .imgbox{width:170px;height:150px;float:left;}
+	.box .content .docli .list1 .imgbox img{padding-top:20px;float:left;}
+	.box .content .docli .list1 .textbox{width:180px;height:150px;padding-left:10px;float:left;}
+	.box .content .docli .list1 .textbox .smalltitle{font-size:15px;color:#272322;padding-top:20px;float:left;}
+	.box .content .docli .list1 .textbox .context{color:#888;font-size:12px;padding-top:12px;line-height:18px;float:left;}
+	.box .content .information{width:780px;height:205px;margin-top:10px;float:left;}
+	.box .content .information .informationtitle{height:40px;border-bottom:2px solid #D6D6D6;}
+	.box .content .information .informationtitle .l_info{font-size:28px;font-weight:bold;float:left;}
+	.box .content .information .informationtitle .l_info span{color:#DB6D4C;}
+	.box .content .information .informationtitle .r_info{line-height:40px;float:right;background:#F2F2F2;color:#333;font-size:18px;}
+	.box .content .information .informationtitle .r_info span{color:#db6d4c;}
+	.box .content .information .informationbox{width:780px;height:200px;}
+	.box .content .information .informationbox .infoimg{width:220px;height:200px;float:left;}
+	.box .content .information .informationbox .infoimg img{width:100%;padding-top:25px;}
+	.box .content .information .informationbox .infocon{float:left;width:560px;height:200px;}
+	.box .content .information .informationbox .infocon .infotitle{padding-top:28px;font-size:20px;font-weight:bold;padding-left:20px;}
+	.box .content .information .informationbox .infocon .infotext{font-size:13px;color:#888;padding-top:15px;padding-left:20px;}
+	.box .content .information .informationbox .infocon .for_person{height:26px;float:left;margin-top:60px;}
+	.box .content .information .informationbox .infocon .for_person .inf_person{float:left;width:130px;}
+	.box .content .information .informationbox .infocon .for_person .inf_person img{width:26px;height:26px;margin-left:20px;border-radius:13px;}
+	.box .content .information .informationbox .infocon .for_person .inf_person span{line-height:26px;font-size:13px;vertical-align:top;}
+
+
+	.box .content .information .informationbox .infocon .for_person .time{width:285px;float:left;font-size:13px;line-height:26px;background:url(img/clock.jpg) no-repeat;padding-left:25px;}
+	.box .content .information .informationbox .infocon .for_person .talk{float:left;width:60px;text-align:right;background:url(img/talk.jpg)  no-repeat;padding-right:25px;}
+	.rightbox{width:280px;float:left;margin-top:40px;margin-left:38px;}
+	.rightbox .right{width:280px;float:left;}
+	.rightbox .right li{list-style:none;height:60px;border-bottom:1px dashed gray;}
+	.rightbox .right .righttitle{font-size:20px;border-bottom:2px solid #CBCBCB;}
+	.rightbox .right li div{float:left;width:80px;height:40px;margin-top:10px;line-height:40px;background:#F2F2F2;}
+	.rightbox .right li div .day{font-size:22px;margin-left:15px;}
+	.rightbox .right li div .month{ font-size:12px;}
+	.rightbox .right li p{width:190px;height:50px;font-size:14px;float:left;padding-top:10px;}
+	.rightbox .rightimg{float:left;margin-top:40px;}
+	
+	.talkabout{float:left;width:280px;margin-top:30px;}
+	.talkabout .talkAboutTitle{width:240px;float:left;font-size:18px;padding-left:40px;border-bottom:2px solid #CBCBCB;}
+	.talkabout li{list-style:none;border-bottom:1px dashed gray;float:left;margin-top:10px;}
+	.talkabout .tcont{height:60px;}
+	.talkabout .tcont .tConImgBox{float:left;width:60px;}
+	.talkabout .tcont .tConImgBox img{border-radius:20px;}
+	
+	.talkabout .tcont .talkerName{color:#FD5D3C;font-size:14px;line-height:30px;}
+	.talkabout .tcont .talkerCon{font-size:14px;}
+	.talkabout .tcont .talkText{font-size:12px;color:#b5b5b5;}
+	.talkabout li p{font-size:12px;line-height:20px;text-indent:2em;padding-bottom:15px;}
+	
+	.FooterContainer{width:100%;background:#313131;float:left;}
+	.FooterContainer .FooterBox{width:1098px;height:570px;margin:0 auto;}
+	.FooterContainer .FooterTop{margin-top:50px;float:left;height:120px;}
+	.FooterContainer .FooterTop .FooterTopLeft{width:720px;float:left;}
+	.FooterContainer .FooterTop .FooterTopMiddle{width:260px;float:left;}
+	.FooterContainer .FooterTop .FooterTopMiddle li{list-style:none;float:left;font-size:12px;color:#FFF;margin-top:15px;}
+	.FooterMiddle{height:130px;float:left;}
+	.FooterMiddle p{color:#6F6F6F;}
+	.FooterMiddle .Cooperate div{float:left;margin-top:15px;margin-right:40px;}
+	.FooterContainer .FooterTop .FooterTopRight{width:108px;float:left;}
+	.SiteNav ,.FriendlyLink{margin-top:25px;float:left;}
+	.SiteNav p,.FriendlyLink p{color:#636363;font-size:13px;}
+	.SiteNav .LiBox li{list-style:none;float:left;padding-right:15px;color:#636363;font-size:12px;padding-top:10px;}
+	.FriendlyLink .FLiBox li{list-style:none;float:left;padding-right:15px;color:#636363;font-size:12px;padding-top:10px;}
+	.FooterFooter{width:100%;background:#2d2d2d;height:50px;float:left;border-top:1px solid #3C3C3C;}
+	.FooterFooter p{width:1098px;margin:0 auto;color:#6F6F6F;font-size:12px;line-height:50px;}
+ 
+ </style>
+ </head>
+ <body>
+	<div>
+		<div class="header">
+			<div class="heaimg">
+				<img src="img/logo.png"/>
+				<p>读懂移动互联网&未来</p>
+			</div>
+			<div class="search">
+				<input type="text"/>
+				<button><img src="img/search.png"/></button>
+			</div>
+			<div class="login">
+				<img src="img/Login.jpg"/>
+				<p>用户</p>
+			</div>
+		</div>
+		
+		<div class="nav">
+			<div class="nav_box">
+				<div class="nav_left">
+					<ul>
+						<li>首页</li>
+						<li>新闻</li>
+						<li>产品</li>
+						<li>TV</li>
+						<li>专题</li>
+						<li>活动</li>
+						<li>发现</li>
+					</ul>
+				</div>
+				<div class="nav_right">
+					<ul>
+						<li>知趣网</li>
+						<li>爱搞机</li>
+						<li>玩客100</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="mainmetter">
+		<div class="box">
+			<div class="content">
+				<div class="topcontent">
+					<img class="mainpic" src="img/watch.jpg">
+					<div class="ins">
+						<p class="title">这一年来小米手环取得的成绩有多炸裂</p>
+						<p class="middle">在去年7月22日，小米除了推出了旗舰机型小米4之外，还
+						推出了第一代小米手环，在这一年时间中，小米手环着实改变
+						了一个行业。</p>	
+					</div>
+					<div class="updownimg">
+						<img class="upimg" src="img/up.jpg"/>
+						<img class="downimg" src="img/down.jpg"/>
+					</div>
+				</div>
+			
+				<div class="list">
+					<img src="img/headline.jpg"/>
+					<p>苹果禁用公测版App Store评论</p>
+					<p>WP手机销量总算突破1亿台了</p>
+					<p>诺基亚下周或发布新款VR产品</p>
+					<p>iOS 设备销量首次超越PC</p>
+					<p>今天，你被微信“清账”了吗？</p>
+					<p>全球最奇特11款镜头长啥样？</p>
+				</div>
+			
+				<div class="docli">
+					<p class="doctitle">精选导读</p>
+					<div class="list1">
+						<div class="imgbox"><img src="img/APP.jpg"></div>
+						<div class="textbox">
+							<p class="smalltitle">如何让App下载量过亿？解读线下预装的那些事儿</p>
+							<p class="context">线下预装的市场如何？怎样才能做到上亿的量？</p>
+						</div>
+					</div>
+					<div class="list1">
+						<div class="imgbox" style="padding-left:25px"><img src="img/vis.jpg"></div>
+						<div class="textbox">
+							<p class="smalltitle">虚拟现实领域11个你不可不知的专业术语</p>
+							<p class="context">虚拟现实行业的专业术语，你都有了解吗？</p>
+						</div>
+					</div>
+					<div class="list1">
+						<div class="imgbox"><img src="img/cutemployee.jpg"></div>
+						<div class="textbox">
+							<p class="smalltitle">不过是裁员，高通怎么就被唱衰？</p>
+							<p class="context">对此有业内认为，如今的高通在对手（例如联发科、三星等）的竞争压力下正在走向衰败。那么事实真</p>
+						</div>
+					</div>
+					<div class="list1">
+						<div class="imgbox" style="padding-left:25px"><img src="img/bicycle.jpg"></div>
+						<div class="textbox">
+							<p class="smalltitle">如何让App下载量过亿？解读线下预装的那些事儿</p>
+							<p class="context">虽然在我的朋友圈中，700bike毁誉参半，但我却要跟专心产品的向</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="information">
+					<div class="informationtitle">
+						<div class="l_info"><span>最新</span>资讯</div>
+						<div class="r_info">今日更新<span>55</span>篇</div>
+					</div>
+					<div class="informationbox">
+						<div class="infoimg"><img src="img/naodong.jpg"/></div>
+						<div class="infocon">
+							<p class="infotitle">苹果的2028亿美元能买啥？来个新西兰！</p>
+							<p class="infotext">苹果这么大一笔钱，总不能就这么存银行吧？</p>
+					
+							<div class="for_person">
+								<div class="inf_person"><img src="img/road.jpg" /><span>吴攀</span></div>
+								<div class="time">2015 / 07 / 22 18:22</div>
+								<a class="talk">100</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rightbox">
+			<div class="right">
+					<p class="righttitle">雷锋日历</p>
+					<ul>
+						<li>
+							<div><span class="day">23</span><span class="month">/7月</span></div>
+							<p>【锋玩会】IOS、Android、Wphone撕逼大战</p>
+						</li>
+						<li>
+							<div><span class="day">22</span><span class="month">/7月</span></div>
+							<p>【锋玩会】不要1999只要999-我们都爱千元机？</p>
+						</li>
+						<li>
+							<div><span class="day">21</span><span class="month">/7月</span></div>
+							<p>【锋玩会】混只能硬件这些年，都私藏了哪些好货？</p>
+						</li>
+						<li>
+							<div><span class="day">20</span><span class="month">/7月</span></div>
+							<p>【锋玩会】这就是对得起用户屁股的智能自行车么？</p>
+						</li>
+					</ul>
+			</div>
+			<div class="rightimg">
+				<img src="img/grind.jpg"/>
+			</div>
+			<div class="talkabout">
+				<p class="talkAboutTitle">精彩评论</p>
+				<ul>
+					<li>
+						<div class="tcont">
+							<div class="tConImgBox"><img src="img/cup.jpg"/></div>
+							<span><a class="talkerName">科技发烧派</a> <a class="talkerCon">评论文章：</a><br/><a class="talkText">孙大圣想拯救中国动漫，可惜技术专利很</a></span>
+						</div>
+						<p>表情确实变化不多，吐槽人家毛发，完全是吹毛求疵，而且也没有必要去追求，大家 ...</p>
+					</li>
+					<li>
+						<div class="tcont">
+							<div class="tConImgBox"><img src="img/cup.jpg"/></div>
+							<span><a class="talkerName">科技发烧派</a> <a class="talkerCon">评论文章：</a><br/><a class="talkText">孙大圣想拯救中国动漫，可惜技术专利很</a></span>
+						</div>
+						<p>表情确实变化不多，吐槽人家毛发，完全是吹毛求疵，而且也没有必要去追求，大家 ...</p>
+					</li>
+					<li>
+						<div class="tcont">
+							<div class="tConImgBox"><img src="img/cup.jpg"/></div>
+							<span><a class="talkerName">科技发烧派</a> <a class="talkerCon">评论文章：</a><br/><a class="talkText">孙大圣想拯救中国动漫，可惜技术专利很</a></span>
+						</div>
+						<p>表情确实变化不多，吐槽人家毛发，完全是吹毛求疵，而且也没有必要去追求，大家 ...</p>
+					</li>
+					<li style="border-bottom:none ;">
+						<div class="tcont">
+							<div class="tConImgBox"><img src="img/cup.jpg"/></div>
+							<span><a class="talkerName">科技发烧派</a> <a class="talkerCon">评论文章：</a><br/><a class="talkText">孙大圣想拯救中国动漫，可惜技术专利很</a></span>
+						</div>
+						<p>表情确实变化不多，吐槽人家毛发，完全是吹毛求疵，而且也没有必要去追求，大家 ...</p>
+					</li>
+				</ul>
+			
+			</div>
+		</div>
+	</div>	
+			
+	<div class="FooterContainer">
+		<div class="FooterBox">
+			<div class="FooterTop">
+			
+				<div class="FooterTopLeft">
+					<img src="img/footer-logo.png"/>
+				</div>
+				
+				<div class="FooterTopMiddle">
+					<ul>
+						<li>联系我们&nbsp|&nbsp</li>
+						<li>关于我们&nbsp|&nbsp</li>
+						<li>投稿&nbsp|&nbsp </li>
+						<li>加入我们</li>
+					</ul>
+				</div>
+				
+				<div class="FooterTopRight">
+					<div style="float:left;"><img src="img/xinlang.jpg"/></div>
+					<div style="float:right;"><img src="img/email.jpg"/></div>
+				</div>
+			</div>
+			
+			
+			<div class="FooterMiddle">
+				<p>合作伙伴：</p>
+				<div class="Cooperate">
+					<div><img src="img/gaoji.png"/></div>
+					<div><img src="img/wanke.png"/></div>
+					<div><img src="img/knew.png"/></div>
+					<div><img src="img/qiniu.png"/></div>
+				</div>
+			</div>
+			
+			<div class="SiteNav">
+				<p>站点导航：</p>
+				<div class="LiBox">
+					<ul>
+						<li>智能硬件</li><li>科技趣闻</li><li>科技人物报道</li><li>硬创公开课2</li><li>互联网资讯</li>
+						<li>互联网创业</li><li>苹果发布会</li><li>百度地图</li><li>联想乐檬</li><li>kickstarter</li>
+						<li>大姨吗</li><li>谷歌地图</li><li>翻墙教程</li><li>机械姬</li><li>撸一撸</li><li>iPhone 6s</li>
+						<li>喜马拉雅电台</li><li>github</li><li>港囧</li><li>美图手机</li><li>秒拍</li><li>zank</li>
+						<li>facebook</li><li>喜马拉雅fm</li><li>快递100</li><li>无人机</li><li>wwdc2015</li><li>图片搜索</li>
+						<li>华为荣耀7</li><li>一万年以后</li><li>众筹</li><li>o2o</li><li>360免费电话</li><li>折叠自行车</li>
+						<li>低头族</li><li>gmail</li><li>zealer</li><li>360手机</li><li>lbe</li><li>vpn</li><li>机械键盘</li>
+						<li>全息投影</li><li>语音助手</li><li>华为智能手表</li><li>极影动漫</li><li>微信营销</li><li>飞机杯</li>
+						<li>小牛电动车</li><li>360手机</li><li>美拍</li><li>google地图</li>
+					</ul>
+				</div>
+			</div>
+			<div class="FriendlyLink">
+				<p>友情链接：</p>
+				<div class="FLiBox">
+					<ul>
+						<li>爱搞机</li><li>knewbi</li><li>好玩的手机游戏</li><li>同步推</li><li>家具网上商城</li>
+						<li>当乐网</li><li>TCL么么哒</li><li>推酷</li><li>手机游戏</li><li>站长网</li><li>前瞻网</li>
+						<li>多特软件站</li><li>凤凰科技</li><li>互联网的一些事</li><li>雷科技</li>	<li>天极网</li>
+						<li>蜂鸟网</li><li>开源中国社区</li><li>N软网</li><li>网站排行榜</li><li>搜狐IT</li>
+						<li>ROM下载之家</li><li>经理人分享</li><li>威锋网</li><li>安卓网</li><li>南瓜说</li>
+						<li>站长之家</li><li>品科技</li><li>安卓软件</li><li>回购网</li><li>九游</li><li>IT之家</li>
+						<li>快科技</li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<div class="FooterFooter">
+		<p>Copyright © 2011-2015 www.leiphone.com 雷锋网-移动互联网智能终端第
+			一媒体 All Rights Reserved 粤ICP备11095991号-1</p>
+	</div>
+</body>
+</html>
+
+
+
+
+

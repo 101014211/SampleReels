@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+ <head>
+	<!--申明当前页面的编码集（中文编码gb2312，国际编码UTF-8）-->
+	<meta http-equiv="Content-Type" content="text/html";charset="utf-8">
+	<!--申明当前页面的三要素-->
+	<title>SampleReels—温涛</title>
+	<meta name="KeyWords" content="作品集">
+	<meta name="Description" content="">
+	<style>
+		*{padding:0;margin:0;}
+		body{font-family:"微软雅黑";}
+		.tit{background:#284F4F;height:60px;width:100%;}
+		h1{line-height:60px;text-align:center;}
+		#time{position:absolute;diaplay:block;color:#FFF;right:5px;top:20px;}
+		.list{width:10%;height:740px;float:left;background:url(production/img/ibg.gif);}
+		.showcontent{width:89%;height:740px;float:left;}
+		a{display:block;text-decoration:none;height:50px;margin-left:20px;line-height:50px;color:#FFF;}	
+	</style>
+	<script>
+		window.onload=function()
+		{
+			var oTime=document.getElementById("time");
+			var timer=null;
+			timer=setInterval(function()
+			{
+				var date=new Date();
+				oTime.innerHTML=date;
+			},1000);
+		};
+	</script>
+ </head>
+ <body>
+ <div class="tit">
+		<h1>SampleReels—温涛</h1>
+		<span id="time"></span>
+</div>
+<div class="mainbox">
+	
+		<div class="list">
+			<a href="production/js/标签/tag.html" target="showcontent">标签自学</a>
+			<a href="production/无缝滚动/home.html" target="showcontent">无缝滚动</a>
+			<a href="production/UI中国/home.html" target="showcontent">UI中国</a>
+			<a href="production/百度首页/home.html" target="showcontent">百度首页细节</a>
+			<a href="production/js/登录界面仿.html" target="showcontent">简单仿登录界面</a>
+			<a href="production/弹幕技术/home.html" target="showcontent">弹幕技术</a>
+			<a href="production/乐乎/home.html" target="showcontent">乐乎网</a>
+			<a href="production/雷锋网/home.html" target="showcontent">雷锋网</a>
+			<a href="production/落网/home.html" target="showcontent">落网</a>
+		</div>
+		<iframe class="showcontent" name="showcontent" src="production/js/标签/tag.html"></iframe>
+	
+ </div>
+ </body>
+</html>

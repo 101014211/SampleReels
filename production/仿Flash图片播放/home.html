@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>仿Flash图片播放</title>
+ <style>
+ *{padding:0;margin:0;}
+ body{width:100%;}
+ #picBox{width:480px;height:394px;margin:150px auto;}
+ #bigBox{width:480px;height:320px;position:relative;}
+ #bigBox .left{display:inline-block;width:240px;height:320px;position:absolute;top:0;left:0;z-index:300;opacity:0;}
+ #bigBox .right{display:inline-block;width:240px;height:320px;position:absolute;top:0;right:0;z-index:300;opacity:0;}
+ 
+
+ #bigBox .pre{width:50px;height:50px;position:absolute;top:140px;left:0;z-index:3000;background:url(img/left.png) 0 -164px no-repeat;opacity:0;}
+ #bigBox .next{width:50px;height:50px;position:absolute;top:140px;right:0;z-index:3000;background:url(img/right.png) -145px 0px no-repeat;opacity:0;}
+ 
+ .bigPicShow{width:480px;height:320px;position:relative;}
+ .bigPicShow li{list-style:none;width:480px;height:320px;position:absolute;}
+ .bigPicShow li img{width:480px;height:320px;top:0;left:0;}
+ #smallBox{width:480px;height:64px;overflow:hidden;margin-top:10px;}
+ #smallPicShow{width:768px;height:64px;position:relative;}
+ #smallPicShow ul{position:absolute;left:-192px;}
+ #smallPicShow li{width:96px;height:64px;list-style:none;float:left;filter:alpha(opacity:60);opacity:0.6;}
+ 
+ #smallPicShow li img{width:96px;height:64px;}
+ #smallPicShow .No4{filter:alpha(opacity:100);opacity:1;}
+ </style>
+ <script>
+	function startMove(obj,target,sty)
+	{
+		var timer=null;
+		clearInterval(obj.timer);
+			
+		obj.timer=setInterval(function()
+			{
+				if(sty=="opacity")
+					var aa=Math.round(parseFloat(getStyle(obj,sty))*100);
+				else
+					var aa=parseInt(getStyle(obj,sty));
+				
+				var speed=(target-aa)/10;
+				speed=speed>0?Math.ceil(speed):Math.floor(speed); 
+			
+				if(aa==target)
+					clearInterval(obj.timer);
+				else
+				{
+					if(sty=="opacity")
+					{
+						obj.style[sty]=(aa+speed)/100;
+						obj.style[sty]="alpha(opacity:"+(aa+speed)+")";
+					}
+					else
+						obj.style[sty]=aa+speed+"px";
+				}				
+			},30); 		
+	}
+	function getStyle(obj,name)
+	{
+		if(obj.currentStyle)
+		return obj.currentStyle[name];
+		else
+		return getComputedStyle(obj,false)[name];
+	}
+	
+	function getByClass(oParent,sClass)
+	{
+		var aEle=oParent.getElementsByTagName("*");
+		var aResult=[];
+		for(var i=0;i<aEle.length;i++)
+		{
+			if(aEle[i].className==sClass)
+			{
+				aResult.push(aEle[i]);
+			}
+		}
+		return aResult;
+	}
+	
+	window.onload=function()
+	{
+		var oDiv=document.getElementById("bigBox");
+		var oButl=getByClass(oDiv,"left")[0];
+		var oButr=getByClass(oDiv,"right")[0];
+		var oButPre=getByClass(oDiv,"pre")[0];
+		var oButNex=getByClass(oDiv,"next")[0];
+		var osmPic=document.getElementById("smallPicShow");
+		var	oUl=osmPic.getElementsByTagName("ul")[0];	
+		var aLiSmall=osmPic.getElementsByTagName("li");
+		var nowIndex=2;
+		var t=0;
+		var aBigPic=getByClass(oDiv,"bigPicShow")[0];
+		var aBLi=aBigPic.getElementsByTagName("li");
+		var pics=aBigPic.getElementsByTagName("img");
+		
+		
+		
+		for(var i=0;i<aLiSmall.length;i++)
+		{
+			aLiSmall[i].index=i;
+			aLiSmall[i].onclick=function()
+			{
+				if(this.index!=t)
+				{
+					t=this.index;
+					aBLi[this.index].style.zIndex=nowIndex++;
+					pics[this.index].style.height=0;	
+					startMove(pics[this.index],320,"height");
+					if(t<2)
+						oUl.style.left=0;
+					else if(t>5)
+						oUl.style.left=-288;
+					else oUl.style.left=-(t-2)*aLiSmall[0].offsetWidth+"px";
+					
+				}
+				for(var j=0;j<aLiSmall.length;j++)
+				{
+					startMove(aLiSmall[j],"60","opacity");
+				}
+				startMove(this,"100","opacity");
+				
+				
+			};
+			
+			aLiSmall[i].onmouseover=function()
+			{
+				startMove(this,"100","opacity");			
+			};
+			
+			aLiSmall[i].onmouseout=function()
+			{
+				if(this.index!=t)
+				startMove(this,"60","opacity");
+			};	
+		
+		}	
+		
+		
+		
+		oButPre.onmouseover=oButl.onmouseover=function()
+		{
+			startMove(oButPre,100,"opacity");
+		};
+		oButPre.onmouseout=oButl.onmouseout=function()
+		{
+			startMove(oButPre,0,"opacity");
+		};
+		oButNex.onmouseover=oButr.onmouseover=function()
+		{
+			startMove(oButNex,100,"opacity");
+		};
+		oButNex.onmouseout=oButr.onmouseout=function()
+		{
+			startMove(oButNex,0,"opacity");
+		};
+		oButPre.onclick=function()
+		{
+			t++;
+			if(t>=aLiSmall.length)
+			t=0;
+			aBLi[t].style.zIndex=nowIndex++;
+			pics[t].style.height=0;	
+			startMove(pics[t],320,"height");
+			
+			for(var j=0;j<aLiSmall.length;j++)
+			{
+				startMove(aLiSmall[j],"60","opacity");
+			}
+			startMove(aLiSmall[t],"100","opacity");	
+			oUl.style.left=oUl.offsetLeft-aLiSmall[0].offsetWidth+"px";
+		};
+		oButNex.onclick=function()
+		{
+			t--;
+		
+			aBLi[t].style.zIndex=nowIndex++;
+			pics[t].style.height=0;
+alert(t);			
+			if(t<=3)
+						oUl.style.left=0;
+					else if(t>5)
+						oUl.style.left=-288;
+					else oUl.style.left=-(t-2)*aLiSmall[0].offsetWidth+"px";
+			startMove(pics[t],320,"height");						
+			for(var j=0;j<aLiSmall.length;j++)
+			{
+				startMove(aLiSmall[j],"60","opacity");
+			}
+			startMove(aLiSmall[t],"100","opacity");	
+			oUl.style.left=oUl.offsetLeft+aLiSmall[0].offsetWidth+"px";
+		};
+		
+		
+	};
+ </script>
+ </head>
+ <body>
+	<div id="picBox">
+		<div id="bigBox">
+			<div class="pre" id="jj"></div>
+			<div class="next"></div>
+			<a class="left" id="abc"></a>
+			<a class="right"></a>
+			<div class="bigPicShow">
+				<ul>
+					<li><img src="img/0.jpg"/></li>
+					<li ><img id="ha" src="img/1.jpg"/></li>
+					<li><img src="img/2.jpg"/></li>
+					<li><img src="img/3.jpg"/></li>
+					<li  style="z-index:1;"><img src="img/4.jpg"/></li>
+					<li><img src="img/5.jpg"/></li>
+					<li><img src="img/6.jpg"/></li>
+					<li><img src="img/7.jpg"/></li>
+				</ul>
+			</div>
+		</div>
+		<div id="smallBox">
+			<div id="smallPicShow">
+				<ul style="position:absolute;">
+					<li><img src="img/0.jpg"/></li>
+					<li><img src="img/1.jpg"/></li>
+					<li><img src="img/2.jpg"/></li>
+					<li><img src="img/3.jpg"/></li>
+					<li class="No4"><img src="img/4.jpg"/></li>
+					<li><img src="img/5.jpg"/></li>
+					<li><img src="img/6.jpg"/></li>
+					<li><img src="img/7.jpg"/></li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+ </body>
+</html>

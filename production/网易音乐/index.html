@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="jquery.mobile-1.3.2/jquery.mobile-1.3.2.css">
+	<style>
+		p{cursor:pointer}
+	</style>
+    <script src="jquery.mobile-1.3.2/jquery-1.8.0.min.js"></script>
+    <script src="jquery.mobile-1.3.2/jquery.mobile-1.3.2.js"></script>
+	<script>
+		$(document).ready(function()
+			{
+				$("p").click(function()
+				{
+					if($("iframe").attr("src")!=($(this).attr("data-src")))
+					{
+						$("iframe").attr("src",$(this).attr("data-src"));
+					}
+				});
+			});
+	</script>
+</head>
+<body>
+<div data-role="header">
+    <a href="#" data-role="button">首页</a>
+    <h1>欢迎访问我的主页</h1>
+	<div style="width:300px;margin:0 auto;margin-bottom:10px;padding:10px;">
+		<p style="cursor:pointer" data-src="http://music.163.com/outchain/player?type=2&id=180515&auto=1&height=66">重出江湖</p>
+		<p data-src="http://music.163.com/outchain/player?type=2&id=288218&auto=1&height=66">酒干倘卖无</p>
+		<p data-src="http://music.163.com/outchain/player?type=2&id=212555&auto=1&height=66">白狐</p>
+	</div>
+	<div style="width:330px;height:86px;margin:0 auto">
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 
+		src="http://music.163.com/outchain/player?type=2&id=180515&auto=1&height=66"></iframe>
+	</div>
+	
+	
+</div>
+</body>
+</html>

@@ -2,57 +2,132 @@
 <html>
 <head>
 	<style>
-	 *{margin:0;padding:0}
-	 body{padding:20px;}
-	 audio{height:32px}
+	 *{margin:0;padding:0;}
+	 body{padding:30px;background:#9e9e9e}
+	 header{width:500px;margin:0 auto;text-align:center}
+	 .content{width:510px;overflow-y:auto;margin:0 auto; padding:5px; font-size:24px;box-shadow:10px 10px 5px #888888;background:#a1887f;}
+	 .musicDiv{width:500px;height:50px;margin:0px auto;line-height:50px;cursor:pointer}
+	 .line{width:500px;height:2px;background:white;float:left;margin:5px 0}
+	 .clear{clear:both}
 	</style>
+	<script>		
+		var olderBox;//记录前一个播放的音乐位置
+		var currentBox;
+		var stateImg;
+		window.onload = function()
+		{	
+			
+			
+			var player = document.getElementById("player");
+			player.addEventListener('pause',function()
+			{
+			if(currentBox != null)
+				stateImg[0].src="pause.png";
+			},false);
+			player.addEventListener('playing',function()
+			{
+			if(currentBox != null)
+				stateImg[0].src="play.png";
+			},false);
+		}
+		
+		function play(obj)
+		{
+			//alert(obj);
+			//var box = document.getElementsByName("box");
+			currentBox = obj;
+			stateImg = obj.getElementsByTagName("img");
+			if(olderBox != obj)
+			{
+				if(olderBox != null)
+				{
+					stateImg1 = olderBox.getElementsByTagName("img");
+					stateImg1[0].src = "";
+				}
+				olderBox = obj;
+				var box1 = obj.getElementsByTagName("span");
+				
+				var songName = "music/" + box1[0].innerText+".mp3";
+				player.src = songName;
+				player.play();
+				stateImg[0].src="play.png";
+			}else
+			{
+				if(player.paused)
+				{
+					player.play();
+					stateImg[0].src="play.png";
+					}
+				else
+				{
+					player.pause();
+					stateImg[0].src="pause.png";
+					}
+			}	
+		}
+		
+		function changeState()
+		{
+		alert("点击");
+			if(current != null)
+			{
+				if(player.paused)
+				{
+					stateImg[0].src="pause.png";
+				}else
+				{
+					stateImg[0].src="play.png";
+				}
+			}
+		}
+		
+	</script>
 </head>
 <body>
-	
-	<!--张宇——给你们-->
-	<div style="width:610px;border:5px solid yellow">
-		<div style="width:100px;margin:0 auto;">
-			<h2>音乐列表</h2>
-		</div>
-		<div style="width:602px;height:32px;margin:10px;background:#8bc34a;border:1px solid green;border-radius:7px;">
-			<div style="width:300px;height:32px;float:left;">
-				<p style="width:300px;height:32px;line-height:32px;float:left">1.张宇——给你们</p>
-			</div>
-			<div style="width:300px;height:32px;float:left">
-				<audio style="float:left" src="music/1Give You.mp3" controls="controls">
-					Your browser does not support the audio element.
-				</audio>
-			</div>
-		</div>
-		<!--刘德华——谢谢你的爱-->
-		<div style="width:602px;height:32px;margin:10px;background:#8bc34a;border:1px solid green;border-radius:7px;">
-			<div style="width:300px;height:32px;float:left;">
-				<p style="width:300px;height:32px;line-height:32px;float:left">2.刘德华——谢谢你的爱</p>
-			</div>
-			<div style="width:300px;height:32px;float:left">
-				<audio src="music/2Thanks for your love.mp3" controls="controls">
-					Your browser does not support the audio element.
-				</audio>
-			</div>
-		</div>
-		<!--苏芮——酒干倘卖无-->
-		<div style="width:602px;height:32px;margin:10px;background:#8bc34a;border:1px solid green;border-radius:7px;">
-			<div style="width:300px;height:32px;float:left;">
-				<p style="width:300px;height:32px;line-height:32px;float:left">3.苏芮——酒干倘卖无</p>
-			</div>
-			<div style="width:300px;height:32px;float:left">
-				<audio style="float:left" src="music/3酒干倘卖无.mp3" controls="controls">
-					Your browser does not support the audio element.
-				</audio>
-			</div>
-			
-		</div>
-		<p>&nbsp;&nbsp;关于音乐功能的说明:1.目前音乐功能播放器没有进行优化，所以听下一首音乐的时候必须手动暂停上一首音乐，
-			否则会出现多首音乐同时播放的情况;
-			2.按下播放按钮后会视网络情况缓冲5-10秒时间；
-			3.以上出现的问题请谅解！！！</p>
+	<header><h1>音乐播放列表</h1></header>
+	<div style="width:510px;height:30px;margin:10px auto;" onclick="changeState()">
+		<audio id="player"  controls="controls" style="width:510px;"></audio>
 	</div>
 	
-	
+	<div id="content" class="content">
+	<script>
+		var content = document.getElementById("content");
+			var clientHeight = document.documentElement.clientHeight-document.documentElement.scrollTop;
+			alert(clientHeight);
+			content.style.height = clientHeight+'px';
+	</script>
+		<div class="musicDiv" style="margin-top:0" name="box" onclick="play(this)">
+			<div style="width:450px;height:50px;float:left;">
+				<span name="songName">1.给你们</span><span name="singer"> - 张宇</span>
+			</div>
+			<div style="width:50px;height:50px;float:left;text-align:center;">
+				<img style="vertical-align:middle;">
+			</div>
+			<div class="line"></div>
+		</div>
+		
+		
+		<div class="musicDiv" name="box" onclick="play(this)">
+			<div style="width:450px;height:50px;float:left;">
+				<span>2.Thanks for your love</span><span> - 刘德华</span>
+			</div>
+			<div style="width:50px;height:50px;float:left;text-align:center;">
+				<img style="vertical-align:middle;">
+			</div>
+			<div class="line"></div>
+		</div>
+		
+		<div class="musicDiv" name="box" onclick="play(this)">
+			<div style="width:450px;height:50px;float:left;">
+				<span>3.酒干倘卖无</span><span> - 苏芮</span>
+			</div>
+			<div style="width:50px;height:50px;float:left;text-align:center;">
+				<img style="vertical-align:middle;">
+			</div>
+			<div class="line"></div>
+		</div>
+		<div class="clear"></div>
+		
+	</div>
 </body>
 </html>

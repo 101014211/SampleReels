@@ -16,8 +16,6 @@
 		var stateImg;
 		window.onload = function()
 		{	
-			
-			
 			var player = document.getElementById("player");
 			player.addEventListener('pause',function()
 			{
@@ -39,6 +37,7 @@
 			stateImg = obj.getElementsByTagName("img");
 			if(olderBox != obj)
 			{
+				//取消上一首音乐后边的播放暂停图标显示
 				if(olderBox != null)
 				{
 					stateImg1 = olderBox.getElementsByTagName("img");
@@ -68,7 +67,6 @@
 		
 		function changeState()
 		{
-		alert("点击");
 			if(current != null)
 			{
 				if(player.paused)
@@ -80,13 +78,20 @@
 				}
 			}
 		}
+		//刚开始打开的时候，audio标签没有音乐播放，点击播放按钮后的提示
+		function ifNull(){
+			var player = document.getElementById("player");
+			if(player != null && olderBox == null){ 
+				alert("请点击下方列表音乐进行播放!");
+			}
+		}
 		
 	</script>
 </head>
 <body>
 	<header><h1>音乐播放列表</h1></header>
-	<div style="width:510px;height:30px;margin:10px auto;" onclick="changeState()">
-		<audio id="player"  controls="controls" style="width:510px;"></audio>
+	<div style="width:510px;margin:10px auto;">
+		<audio id="player"  controls="controls" style="width:510px" onclick="ifNull(this)"></audio>
 	</div>
 	
 	<div id="content" class="content">
@@ -125,6 +130,60 @@
 			</div>
 			<div class="line"></div>
 		</div>
+		
+		<div class="musicDiv" name="box" onclick="play(this)">
+			<div style="width:450px;height:50px;float:left;">
+				<span>4.爱江上更爱美人</span> <span> - 李丽芬 </span>
+			</div>
+			<div style="width:50px;height:50px;float:left;text-align:center;">
+				<img style="vertical-align:middle;">
+			</div>
+			<div class="line"></div>
+		</div>
+		<div class="musicDiv" name="box" onclick="play(this)">
+			<div style="width:450px;height:50px;float:left;">
+				<span>5.风清扬</span><span> - 王菲 马云</span>
+			</div>
+			<div style="width:50px;height:50px;float:left;text-align:center;">
+				<img style="vertical-align:middle;">
+			</div>
+			<div class="line"></div>
+		</div>
+		<div class="musicDiv" name="box" onclick="play(this)">
+			<div style="width:450px;height:50px;float:left;">
+				<span>6.涉川</span><span> - 不才</span>
+			</div>
+			<div style="width:50px;height:50px;float:left;text-align:center;">
+				<img style="vertical-align:middle;">
+			</div>
+			<div class="line"></div>
+		</div>
+		
+		<div class="musicDiv" name="box" onclick="play(this)">
+			<div style="width:450px;height:50px;float:left;">
+				<span>7.说散就散</span><span> - 陈咏桐</span>
+			</div>
+			<div style="width:50px;height:50px;float:left;text-align:center;">
+				<img style="vertical-align:middle;">
+			</div>
+			<div class="line"></div>
+		</div>
+		<div class="musicDiv" name="box" onclick="play(this)">
+			<div style="width:450px;height:50px;float:left;">
+				<span>8.一生所爱</span><span> - 卢冠廷</span>
+			</div>
+			<div style="width:50px;height:50px;float:left;text-align:center;">
+				<img style="vertical-align:middle;">
+			</div>
+			<div class="line"></div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
 		<div class="clear"></div>
 		
 	</div>
